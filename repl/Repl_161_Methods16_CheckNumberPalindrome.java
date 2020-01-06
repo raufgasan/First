@@ -29,6 +29,7 @@ public class Repl_161_Methods16_CheckNumberPalindrome {
 
         int palindrome = 0;
         int num1 = num;
+
         while(num > 0) {
             palindrome = palindrome * 10 + num % 10;
             num /= 10;
