@@ -15,34 +15,25 @@ public class Repl_171_2D_Arrays_ChessBoard {
         //WRITE YOUR CODE HERE
 
 
+        for (int i = 0; i <chessBoard.length ; i++) {
 
-//        String [][] chessBoard = {{"1","2","3","4","5","6","7","8"},{"a","b","c","d","e","f","g","h"}};
+            for (int j = 0; j <chessBoard[i].length ; j++) {
 
-//
-//        for (int i = 0; i <chessBoard.length ; i++) {
-//
-//        for (int x = 'a'; x <='h' ; x++) {
-//
-//            chessBoard[i][x]=String.valueOf(i)+String.valueOf(x);
-//
-//            
-//        }
-//
-//        }
+                int y = 'a'+j;
 
+                chessBoard[i][j]=(""+(i+1))+(Character.toString((char)+y));
 
-//
-//
-//        //DO NOT CHANGE
-//        System.out.println(Arrays.deepToString(chessBoard));
-//
-//        for (int i = 'a'; i <'c' ; i++) {
-//            System.out.println("char(i) = " +);
-//
-//        }
+            }
+
+        }
 
 
 
+
+
+
+        //DO NOT CHANGE
+        System.out.println(Arrays.deepToString(chessBoard));
 
 
     }

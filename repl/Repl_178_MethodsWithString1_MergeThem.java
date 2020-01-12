@@ -10,18 +10,36 @@ public class Repl_178_MethodsWithString1_MergeThem {
 //        s2 ==> "abcde"
 //        mergeStrings(s1,s2) ==> "1a2b3c4d5e"
 //
-//        mergeStrings("wooden", "spoon") ==> "wsopoodoenn"
+       mergeStrings("wooden", "spoon");// ==> "wsopoodoenn"
 //
 //        mergeStrings("java", "selenium") ==> "jsaevlaenium"
+
+        System.out.println(mergeStrings("java", "selenium"));
+
+
+
     }
 
-//    public static String mergeStrings(String one, String two) {
-//
-////
-////
-////        for (int i = 0; i < ; i++) {
-////
-////        }
-//
-//    }
+    public static String mergeStrings(String one, String two) {
+
+
+        String res ="";
+        if(one.length()<two.length()){
+            for (int i = 0; i <one.length() ; i++) {
+                res+=one.charAt(i)+two.charAt(i)+"";
+
+            }
+        }
+        res+=two.substring(one.length());
+       if (one.length()>two.length()){
+           for (int i = 0; i <one.length() ; i++) {
+               res+=one.charAt(i)+two.charAt(i)+"";
+
+           }
+       }
+        res+=two.substring(two.length());
+
+        return res;
+
+    }
 }

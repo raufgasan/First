@@ -43,34 +43,68 @@ public class Repl_170_Arrays_ZombieAttack2 {
 //        }
 
         //TODO. Write you code below this line.
-int []inhabitants = {3, 6, 0, 4, 3, 2, 7, 0};
+int []inhabitants = {10, 0, 20, 4, 0, 1, 6, 0};
+
+
         int days = 0;
-
-
         System.out.println("Day " + days + " " + Arrays.toString(inhabitants));
 
+        int lon = inhabitants.length;
+        int [] arr = new int[inhabitants.length];
+
+       for (int i = 0; i <lon ; i++) {
+           while (inhabitants[i]!=0) {
+           for (int j = 0; j <inhabitants.length ; j++) {
+               arr[j]=inhabitants[j];
+           }
+
+                  for (int x = 0; x < lon; x++) {
 
 
-        for (int i = inhabitants.length-1; 0 <=i;  i--) {
+                      if (inhabitants[x]==0        &&          x!=0  ) {
 
-            while (inhabitants[i] != 0) {
+                          inhabitants[x-1]=arr[x-1] / 2;
 
-                if (inhabitants[i]==0)
+                      }
+                      if (inhabitants[x]==0  &&         x<=6) {
 
-                    inhabitants[i+1] /= 2;
-                inhabitants[i-1] /= 2;
-                    days++;
-                    System.out.println("Day " + days + " " + Arrays.toString(inhabitants));
+                          inhabitants[x+1] =arr[x+1]/ 2;
+
+                          x++;
+                      }
+
+
+
+
+//
+//                      if (x==0&&inhabitants[x]==0&&inhabitants[2]!=0){
+//                          inhabitants[x+1] /= 2;
+//                      }if (x==inhabitants.length-1&&inhabitants[inhabitants.length-1]==0&&inhabitants[inhabitants.length-3]!=0){
+//                          inhabitants[inhabitants.length-2]/= 2;
+//                          break;
+//                      }
+//
+//                    if(x>0&&x<inhabitants.length-1&&(inhabitants[x]==0      ||   inhabitants[inhabitants.length-2]==0)) {
+//
+//                          inhabitants[x+1] /= 2;
+//
+//                          inhabitants[x-1] /= 2;
+//                          x++;
+//                      }
 
 
 
             }
+
+           days++;
+           System.out.println("Day " + days + " " + Arrays.toString(inhabitants));
+       }
+
         }
-
-
 
         }
 
 
 
     }
+//&&(x>=2&&inhabitants[x-2]==0)

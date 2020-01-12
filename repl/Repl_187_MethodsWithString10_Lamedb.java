@@ -1,5 +1,9 @@
 package repl;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class Repl_187_MethodsWithString10_Lamedb {
     public static void main(String[] args) {
 
@@ -74,56 +78,30 @@ public class Repl_187_MethodsWithString10_Lamedb {
 //                lameDb("1tst#2bla#3foo","none","1","")+"\n"
 //        );
 
-//    }
-//
-//    public static String lameDb(String db, String op,String id,String data)
-//    {
-        String db="1data#2moredata#3yet";
-        String op="delete";
-        String id="2";
-        String data="";
-
-        String db1=db.substring(0,db.indexOf("#"));
-        System.out.println("db1 = " + db1);
-        String db2=db.substring(db.indexOf("#")+1,db.lastIndexOf("#"));
-        System.out.println("db2 = " + db2);
-        String db3=db.substring(db.lastIndexOf("#")+1);
-        System.out.println("db3 = " + db3);
-
-        if(op.equals("add")) {
-            if (id.equals("4")) {
-                System.out.println(db + "#4" + data);
-            }
-        }
-        if(op.equals("edit")){
-            if(id.equals("1")){
-                System.out.println(db.replace(db1,"1"+data));
-            }
-            if(id.equals("2")){
-                System.out.println(db.replace(db2,"2"+data));
-            }
-            if(id.equals("3")){
-                System.out.println(db.replace(db3,"3"+data));
-            }
-        }
-        else if(op.equals("delete")){
-            if(id.equals("1")){
-                System.out.println(db.replace(db1,""));
-            }
-            if(id.equals("2")){
-                System.out.println(db.replace(db2+"#",""));
-            }
-            if(id.equals("3")){
-                System.out.println(db.replace(db3,""));
-            }
-        }
-return;
-
     }
 
+    public static String lameDb(String db, String op,String id,String data)
+    {
+        List<String> lst=new ArrayList<>(Arrays.asList(db.split("#")));
+        String res ="";
+        int idInt = Integer.parseInt(id)-1;
+        if(op.equals("add")){
+        lst.add(id+data);
+    }else if(op.equals("edit")){
+        lst.set(idInt,id+data);
+    }else if(op.equals("delete")){
+        lst.remove(idInt);
+    }
+        for(int i=0; i< lst.size();i++){
+            if(lst.get(i).charAt(0)!='1'){
+                res+="#";
+            }
+            res+=lst.get(i);
+        }
+        return res;
 
 
-    }//end lameDb
-
+    }
+}
 
 
