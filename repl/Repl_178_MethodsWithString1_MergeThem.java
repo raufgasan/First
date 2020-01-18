@@ -14,7 +14,7 @@ public class Repl_178_MethodsWithString1_MergeThem {
 //
 //        mergeStrings("java", "selenium") ==> "jsaevlaenium"
 
-        System.out.println(mergeStrings("java", "selenium"));
+        System.out.println(mergeStrings("java", "hi"));
 
 
 
@@ -22,24 +22,30 @@ public class Repl_178_MethodsWithString1_MergeThem {
 
     public static String mergeStrings(String one, String two) {
 
+        String newStr="";
 
-        String res ="";
-        if(one.length()<two.length()){
+        if (one.length()>two.length()){
+            for (int i = 0; i <two.length() ; i++) {
+                newStr+=""+one.charAt(i)+two.charAt(i);
+
+            }
+            newStr+=one.substring(two.length());
+        }
+        if (one.length()<two.length()){
             for (int i = 0; i <one.length() ; i++) {
-                res+=one.charAt(i)+two.charAt(i)+"";
+                newStr+=""+one.charAt(i)+two.charAt(i);
+
+            }
+            newStr+=two.substring(one.length());
+        }
+        if (one.length()==two.length()){
+            for (int i = 0; i <one.length() ; i++) {
+                newStr+=""+one.charAt(i)+two.charAt(i);
 
             }
         }
-        res+=two.substring(one.length());
-       if (one.length()>two.length()){
-           for (int i = 0; i <one.length() ; i++) {
-               res+=one.charAt(i)+two.charAt(i)+"";
 
-           }
-       }
-        res+=two.substring(two.length());
-
-        return res;
+        return newStr;
 
     }
 }
